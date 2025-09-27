@@ -11,7 +11,8 @@
 	
 ## Circuit Diagram:
 
- 
+ <img width="1006" height="719" alt="image" src="https://github.com/user-attachments/assets/01485f7f-e394-4dd0-bd07-ae3dcdc2e2a6" />
+
 
 
 
@@ -58,9 +59,46 @@ Step 7: Save Your Work
 
 ## Program:
 
+	int LED = 13;
+	int MQ2pin = A0;
+	
+	void setup()
+	{
+	  Serial.begin(9600);
+	}
+	
+	void loop()
+	{
+	  float sensorValue;
+	  sensorValue = analogRead(MQ2pin);
+	  
+	  if(sensorValue >= 250)
+	  {
+	  	digitalWrite(LED, HIGH);
+	    Serial.print(sensorValue);
+	    Serial.print(" ");
+	  }
+	  else
+	  {
+	    digitalWrite(LED, LOW);
+	    Serial.print(" ");
+	    Serial.print(sensorValue);
+	  }
+	  
+	  delay(1000);
+	}
+
 ## Output:
+
+
 
    
 
+https://github.com/user-attachments/assets/e863e527-3a3c-4487-b0c7-6a1a55b55191
+
+
+
 ## Result:
+
+Thus, Gas Leak detection using Arduino Uno was successfully implemented using TinkerCad.
 
